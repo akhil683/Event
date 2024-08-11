@@ -27,8 +27,9 @@ const EventSchema = new Schema({
   price: { type: String },
   isFree: { type: Boolean, default: false },
   url: { type: String },
-  category: { type: Schema.Types.ObjectId, ref: "Category" },
-  organizer: { type: Schema.Types.ObjectId, ref: "User" },
+  category: { type: Schema.Types.ObjectId, ref: "Category" }, // reference to Category model/collection
+  organizer: { type: Schema.Types.ObjectId, ref: "User" }, // reference to User model/collection
 });
+
 const Event = models.Event || model("Event", EventSchema);
 export default Event;
